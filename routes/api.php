@@ -24,8 +24,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(RegisterController::class)->group(function(){
     Route::post('register', 'register');
     Route::post('login', 'login');
+    Route::get('datos', 'datos');
 });
         
 Route::middleware('auth:sanctum')->group( function () {
     Route::resource('products', ProductController::class);
+
 });
